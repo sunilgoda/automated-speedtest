@@ -8,6 +8,9 @@ from pandas import ExcelWriter
 
 #df = pd.DataFrame(columns=['Result_ID', 'Date', 'Time', 'Ping', 'Download_Speed', 'Upload_Speed', 'Server_Name', 'Server_Place', 'Result_URL'])
 
+'''
+Read data from Microsoft Excel and do relevant type conversion
+'''s.
 df = pd.read_excel('jio_speed_test.xls')
 
 dt = df.Date+" "+df.Time
@@ -46,6 +49,7 @@ axes.set_ylim([0.00,15.0])
 
 plt.show()
 
+#Plots Upload speed of Jio 4G versus time
 plt.suptitle('Upload speed trend of Jio 4G internet from 18th July 2018, 14:51 to 19th July 2018, 13:36 at (20.156720, 85.713394)', fontsize=16)
 #plt.plot_date(dates, downspeed, 'r-', label='Download Speed Trend')
 plt.plot_date(dates, upspeed, 'b-', label='Upload Speed Trend')
@@ -55,6 +59,7 @@ plt.xlabel('Timestamps of Speedtest (MM-DD HH)', fontsize=16)
 plt.ylabel('Upload Speed (Mbps)', fontsize=16)
 plt.show()
 
+#Plots Download and Upload speed of Jio 4G versus time
 plt.suptitle('Download and Upload speed trend of Jio 4G internet from 18th July 2018, 14:51 to 19th July 2018, 13:36 at (20.156720, 85.713394)', fontsize=16)
 plt.plot_date(dates, downspeed, 'r-', label='Download Speed Trend')
 plt.plot_date(dates, upspeed, 'b-', label='Upload Speed Trend')
